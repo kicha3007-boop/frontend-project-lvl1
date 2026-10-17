@@ -1,0 +1,37 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Brain Games: five console games for training your brain",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-progression": "bin/brain-progression.js",
+    "brain-prime": "bin/brain-prime.js"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "oxlint && oxfmt --ignore-path=.oxfmtignore --check",
+    "lint:fix": "oxfmt --ignore-path=.oxfmtignore && oxlint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kicha3007-boop/frontend-project-lvl1.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0"
+  }
+}

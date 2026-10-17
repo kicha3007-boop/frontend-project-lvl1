@@ -1,38 +1,80 @@
-# Игры разума (JS)
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/kicha3007-boop/frontend-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/kicha3007-boop/frontend-project-lvl1/actions)
+[![Lint](https://github.com/kicha3007-boop/frontend-project-lvl1/actions/workflows/lint.yml/badge.svg)](https://github.com/kicha3007-boop/frontend-project-lvl1/actions/workflows/lint.yml)
 
-[![hexlet-check](https://github.com/kicha3007-boop/frontend-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/kicha3007-boop/frontend-project-lvl1/actions)
+# Игры разума
 
-Погрузитесь в непростую экосистему JavaScript, научитесь настраивать рабочее окружение. Подружитесь с линтером (анализатором качества кода) и менеджером зависимостей npm. Поймёте, чем git отличается от GitHub, поработаете с внешними репозиториями. Получите опыт построения архитектуры полноценного приложения и написания чистого кода.
+Пять консольных игр для тренировки мозга. Игра задаёт три вопроса подряд: три верных ответа — победа,
+первый неверный — поражение и предложение попробовать снова.
 
-Учебный проект Хекслета: https://ru.hexlet.io/programs/frontend
-Как это должно работать: https://asciinema.org/a/l40Lrk3midkLmNEOmgZErGnY7
+| Команда | Игра |
+|---|---|
+| `brain-even` | Чётное ли число |
+| `brain-calc` | Калькулятор: `+`, `-`, `*` |
+| `brain-gcd` | Наибольший общий делитель |
+| `brain-progression` | Пропущенное число арифметической прогрессии |
+| `brain-prime` | Простое ли число |
 
-## Стек
+`brain-games` только знакомится с игроком.
 
-- JavaScript
+## Требования
+
+- Node.js 22 или новее
+- npm
+- make
 
 ## Установка
-
-<!-- Опишите установку: клонирование, зависимости, переменные окружения -->
 
 ```bash
 git clone https://github.com/kicha3007-boop/frontend-project-lvl1.git
 cd frontend-project-lvl1
+make install
+npm link
 ```
 
-## Использование
+## Запуск
 
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
+```bash
+brain-even        # после npm link
+make brain-even   # без глобальной установки
+```
 
----
+## Пример игры
 
-<details>
-<summary>Автоматические тесты Хекслета</summary>
+```text
+$ brain-progression
+Welcome to the Brain Games!
+May I have your name? Sam
+Hello, Sam!
+What number is missing in the progression?
+Question: 5 7 9 11 13 .. 17 19 21 23
+Your answer: 15
+Correct!
+Question: 2 5 8 .. 14 17 20 23 26 29
+Your answer: 11
+Correct!
+Question: 14 19 24 29 34 39 44 49 54 ..
+Your answer: 59
+Correct!
+Congratulations, Sam!
+```
 
-Тесты запускаются на каждый коммит. За запуск отвечает файл `.github/workflows/hexlet-check.yml` — не удаляйте и не переименовывайте ни его, ни репозиторий.
+```text
+$ brain-calc
+Welcome to the Brain Games!
+May I have your name? Sam
+Hello, Sam!
+What is the result of the expression?
+Question: 25 * 7
+Your answer: 145
+'145' is wrong answer ;(. Correct answer was '175'.
+Let's try again, Sam!
+```
 
-</details>
+## Разработка
 
-## О Хекслете
-
-[Хекслет](https://ru.hexlet.io/) — школа программирования: авторские программы обучения с практикой, поддержкой наставников и реальными проектами, которые остаются в резюме. Этот репозиторий — один из таких проектов.
+```bash
+make lint       # oxlint + проверка форматирования oxfmt
+make lint-fix   # отформатировать и исправить
+make publish    # npm publish --dry-run
+```
